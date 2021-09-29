@@ -21,6 +21,10 @@ main .wrapper .containerGrid .info {
     flex-direction: column;
 }
 
+main .wrapper .containerGrid .info h1 {
+    text-transform: uppercase;
+}
+
 main .wrapper .containerGrid .info a {
     text-decoration: none;
     color: black;

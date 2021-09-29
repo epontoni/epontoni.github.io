@@ -49,7 +49,7 @@
                 </div>
                 <div class="about">
                     <p>
-                        Mi nombre es Emanuel Pontoni, tengo 29 años y vivo en la ciudad de Río Cuarto, Córdoba, Argentina.
+                        Mi nombre es Emanuel Pontoni, tengo <span id="edad"></span> años y vivo en la ciudad de Río Cuarto, Córdoba, Argentina.
                         Me encanta desarrollar aplicaciones que sean amadas por los usuarios: fáciles de usar, útiles y bonitas. Amo compartir mis conocimientos y resolver problemas.
                     </p>
                 </div>
@@ -78,5 +78,10 @@
             </a>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        const edad = document.querySelector('#edad')
+        edad.innerHTML = new Date().getFullYear() - 1992
+    </script>
 </body>
 </html>
