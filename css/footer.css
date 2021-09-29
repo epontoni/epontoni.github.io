@@ -1,0 +1,17 @@
+.social {
+    padding: 1rem 0;
+    display: flex;
+    gap: .75rem;
+    font-size: 1.25rem;
+    justify-content: center;
+}
+
+.social a {
+    text-decoration: none;
+    color: black;
+    transition: color .25s ease-in-out;
+}
+
+.social a:hover {
+    color: #dc2625;
+}
