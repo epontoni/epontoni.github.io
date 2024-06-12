@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { TECHNOLOGIES } from "@/constants";
 import Image from "next/image";
 import { FaBriefcase, FaLocationDot } from "react-icons/fa6";
@@ -11,7 +10,7 @@ export default function Home() {
         <div className="flex justify-center items-center min-w-[200px] h-full py-2">
           <Image
             className="rounded-full hover:scale-125 hover:-rotate-6 cursor-pointer transition-all"
-            src="mame-cv.jpg"
+            src="/mame-cv.jpg"
             alt="Emanuel Pontoni"
             width={180}
             height={37}
