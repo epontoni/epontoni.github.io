@@ -39,7 +39,11 @@ export default function ProjectsPage() {
         </CardHeader>
         <CardContent>
           Your customisable AI chat agent that helps you manage your customer
-          conversations.
+          conversations. Click{" "}
+          <a href="https://youtu.be/PX8a8aVClqY" target="_blank">
+            here
+          </a>{" "}
+          to see how to integrate machine learning models in your projects.
           <CardFooter className="flex justify-end mt-2 p-0">
             <Button>
               <a
