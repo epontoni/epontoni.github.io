@@ -40,7 +40,11 @@ export default function ProjectsPage() {
         <CardContent>
           Your customisable AI chat agent that helps you manage your customer
           conversations. Click{" "}
-          <a href="https://youtu.be/PX8a8aVClqY" target="_blank">
+          <a
+            href="https://youtu.be/PX8a8aVClqY"
+            target="_blank"
+            className="text-primary hover:text-primary-foreground"
+          >
             here
           </a>{" "}
           to see how to integrate machine learning models in your projects.
