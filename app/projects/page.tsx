@@ -34,6 +34,27 @@ export default function ProjectsPage() {
 
       <Card>
         <CardHeader>
+          <CardTitle>Custom AI Chatbot</CardTitle>
+          <CardDescription>Your customisable AI chat agent.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          Your customisable AI chat agent that helps you manage your customer
+          conversations.
+          <CardFooter className="flex justify-end mt-2 p-0">
+            <Button>
+              <a
+                href="https://custom-ai-chatbot-mocha.vercel.app/"
+                target="_blank"
+              >
+                Demo
+              </a>
+            </Button>
+          </CardFooter>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle>
             Programación, Robótica y pensamiento computacional
           </CardTitle>
