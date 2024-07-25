@@ -14,7 +14,7 @@ export default function ProjectsPage() {
       <Card>
         <CardHeader>
           <CardTitle>Educenter</CardTitle>
-          <CardDescription>Eventos deportivos</CardDescription>
+          <CardDescription>LMS Learning Management System</CardDescription>
         </CardHeader>
         <CardContent>
           Educenter es una simple plataforma de e-learning.
