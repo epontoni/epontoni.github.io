@@ -13,6 +13,23 @@ export default function ProjectsPage() {
     <main className="max-w-screen-xl m-auto p-2 grid md:grid-cols-4 gap-2">
       <Card>
         <CardHeader>
+          <CardTitle>Educenter</CardTitle>
+          <CardDescription>Eventos deportivos</CardDescription>
+        </CardHeader>
+        <CardContent>
+          Educenter es una simple plataforma de e-learning.
+          <CardFooter className="flex justify-end mt-2 p-0">
+            <Button>
+              <a href="https://educenter.tech" target="_blank">
+                Demo
+              </a>
+            </Button>
+          </CardFooter>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle>FLOKOOB</CardTitle>
           <CardDescription>Eventos deportivos</CardDescription>
         </CardHeader>
