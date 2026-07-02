@@ -1232,15 +1232,16 @@ a {
   }
   
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: translateY(7px) rotate(45deg);
   }
   
   .hamburger.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-10px);
   }
   
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5deg, -5deg);
+    transform: translateY(-7px) rotate(-45deg);
   }
   
   .hero-buttons {
