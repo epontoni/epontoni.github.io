@@ -317,7 +317,6 @@ a {
 .dot-sunset { background-color: #8b5cf6; }
 .dot-amber { background-color: #d97706; }
 
-/* Call to Action Button */
 .btn-cta {
   background: var(--accent);
   color: #fff !important;
@@ -326,6 +325,7 @@ a {
   border-radius: 9999px;
   box-shadow: 0 4px 15px var(--glow);
   transition: all var(--transition-speed);
+  white-space: nowrap;
 }
 
 .btn-cta:hover {
@@ -337,17 +337,37 @@ a {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  z-index: 1001;
 }
 
 .hamburger span {
-  width: 25px;
+  display: block;
+  width: 22px;
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
+
+/* Responsive Utility Classes */
+.show-mobile {
+  display: none !important;
+}
+
+.hide-mobile {
+  display: block;
+}
+
 
 /* ==========================================================================
    HERO SECTION
@@ -1242,4 +1262,47 @@ a {
   .section-title {
     font-size: 1.8rem;
   }
+
+  /* Mobile Dropdown Responsive Elements */
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .show-mobile {
+    display: block !important;
+  }
+  
+  .show-mobile.btn-cta {
+    display: inline-block !important;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto 0;
+  }
+
+  .mobile-accent-picker {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mobile-accent-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mobile-color-dots {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
 }
+
