@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================================================================
+   HOUDINI CSS PROPERTIES (FOR SMOOTH ACCENT TRANSITIONS)
+   ========================================================================== */
+@property --accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #10b981;
+}
+
+@property --accent-hover {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #059669;
+}
+
+@property --border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(16, 185, 129, 0.15);
+}
+
+@property --glow {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(16, 185, 129, 0.25);
+}
+
+/* ==========================================================================
    CSS VARIABLES & DESIGN SYSTEM
    ========================================================================== */
 :root {
@@ -102,7 +129,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  transition: background-color 0.8s ease, color 0.8s ease, --accent 0.8s ease, --accent-hover 0.8s ease, --border 0.8s ease, --glow 0.8s ease;
 }
 
 a {

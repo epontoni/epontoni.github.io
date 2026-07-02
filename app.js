@@ -1,5 +1,8 @@
 import DATA from './data.js';
 
+const ACCENTS = ['emerald', 'sapphire', 'sunset', 'amber'];
+let rotationInterval = null;
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileNav();
@@ -10,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCertificates();
   initScrollReveal();
   setupEventListeners();
+  startAccentRotation();
 });
 
 /* ==========================================================================
@@ -32,6 +36,23 @@ function initTheme() {
   // Accent Color
   const savedAccent = localStorage.getItem('theme-accent') || 'emerald';
   setAccentColor(savedAccent);
+}
+
+function startAccentRotation() {
+  if (rotationInterval) clearInterval(rotationInterval);
+  rotationInterval = setInterval(() => {
+    const currentAccent = localStorage.getItem('theme-accent') || 'emerald';
+    let idx = ACCENTS.indexOf(currentAccent);
+    idx = (idx + 1) % ACCENTS.length;
+    setAccentColor(ACCENTS[idx]);
+  }, 10000); // Cambia el color de acento cada 10 segundos
+}
+
+function stopAccentRotation() {
+  if (rotationInterval) {
+    clearInterval(rotationInterval);
+    rotationInterval = null;
+  }
 }
 
 function updateThemeIcon(mode) {
@@ -626,6 +647,7 @@ function setupEventListeners() {
   document.querySelectorAll('.color-dot').forEach(dot => {
     dot.addEventListener('click', (e) => {
       e.stopPropagation();
+      stopAccentRotation(); // Detiene la rotación automática si el usuario elige un color manualmente
       const color = dot.dataset.color;
       setAccentColor(color);
       colorDropdown.classList.remove('show');
