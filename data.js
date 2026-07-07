@@ -32,10 +32,10 @@ const DATA = {
   ],
   projects: [
     {
-      title: "Educenter",
-      description: "Simple plataforma de e-learning (LMS - Learning Management System). Permite a profesores gestionar cursos y a estudiantes acceder a material didáctico.",
+      title: "Plataforma de Aprendizaje",
+      description: "Plataforma de e-learning que permite a docentes publicar cursos de manera organizada y a estudiantes acceder a material didáctico.",
       tech: ["Next.js", "Tailwind CSS", "Shadcn UI", "Prisma", "MySQL"],
-      demo: "https://educenter.tech",
+      demo: "https://emanuelpontoni.vercel.app",
       category: "web"
     },
     {
