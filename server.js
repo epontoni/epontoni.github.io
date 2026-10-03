@@ -15,7 +15,7 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   // Prevent path traversal
-  let safeUrl = req.url.split('?')[0];
+  let safeUrl = decodeURIComponent(req.url.split('?')[0]);
   let filePath = path.join(__dirname, safeUrl === '/' ? 'index.html' : safeUrl);
   
   if (!filePath.startsWith(__dirname)) {

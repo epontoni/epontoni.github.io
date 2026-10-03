@@ -6,12 +6,14 @@ const DATA = {
     locationLink: "https://maps.app.goo.gl/Gq4Q5zNyGN3FyJzg9",
     avatar: "mame-cv.jpg",
     cvPdf: "emanuelpontoni-cv.pdf",
+    birthDate: "1992-08-09",
     bio: "Mi nombre es Emanuel Pontoni, tengo 33 años y vivo en la ciudad de Bell Ville, Córdoba, Argentina. Soy un profesional versátil con formación en educación y desarrollo web, que combina más de 10 años de experiencia como profesor de matemática con una sólida experiencia en tecnologías modernas de desarrollo. Sobresalgo en la integración de la tecnología y la educación, promoviendo el aprendizaje y el desarrollo de habilidades tanto técnicas como blandas en mis estudiantes."
   },
   skills: [
     { name: "HTML5", category: "frontend" },
     { name: "CSS3", category: "frontend" },
     { name: "JavaScript", category: "frontend" },
+    { name: "TypeScript", category: "frontend" },
     { name: "React.js", category: "frontend" },
     { name: "Next.js", category: "frontend" },
     { name: "Tailwind CSS", category: "frontend" },
@@ -19,22 +21,34 @@ const DATA = {
     { name: "Framer Motion", category: "frontend" },
     { name: "Node.js", category: "backend" },
     { name: "Nest.js", category: "backend" },
+    { name: "Java", category: "backend" },
+    { name: "Spring Boot", category: "backend" },
     { name: "Python", category: "backend" },
     { name: "SQL", category: "backend" },
     { name: "MongoDB", category: "backend" },
     { name: "Firebase", category: "backend" },
+    { name: "Claude Code", category: "ai" },
+    { name: "IA Generativa", category: "ai" },
+    { name: "Machine Learning", category: "ai" },
+    { name: "Power BI", category: "data" },
+    { name: "Análisis y Limpieza de Datos", category: "data" },
+    { name: "Visualización con Python", category: "data" },
+    { name: "AWS / Cloud Computing", category: "tools" },
+    { name: "DevOps", category: "tools" },
+    { name: "Testing Automatizado", category: "tools" },
     { name: "GeoGebra", category: "math" },
     { name: "LaTeX", category: "math" },
     { name: "Figma", category: "design" },
     { name: "Git & GitHub", category: "tools" },
     { name: "NPM", category: "tools" },
+    { name: "Scratch", category: "edu" },
     { name: "Arduino / Automatización", category: "tools" }
   ],
   projects: [
     {
       title: "Plataforma de Aprendizaje",
       description: "Plataforma de e-learning que permite a docentes publicar cursos de manera organizada y a estudiantes acceder a material didáctico.",
-      tech: ["Next.js", "Tailwind CSS", "Shadcn UI", "Prisma", "MySQL"],
+      tech: ["Next.js", "Tailwind CSS", "MDX", "TypeScript"],
       demo: "https://emanuelpontoni.vercel.app",
       category: "web"
     },
@@ -81,7 +95,7 @@ const DATA = {
       role: "Profesor de Matemática",
       company: "Educación Secundaria (Varios)",
       period: "Noviembre 2015 – Presente (~10 años)",
-      description: "Dictado de clases y planificación pedagógica para nivel medio y superior. Desempeño como Jefe del Departamento de Matemática durante 4 años, liderando iniciativas curriculares y coordinando el equipo docente."
+      description: "Dictado de clases y planificación pedagógica para nivel secundario y superior. Desempeño como Jefe del Departamento de Matemática durante 4 años, liderando iniciativas curriculares y coordinando el equipo docente."
     },
     {
       role: "Docente Remoto (Pensamiento Computacional)",
@@ -119,6 +133,7 @@ const DATA = {
   certificates: [
     { title: "EF SET English Certificate (C2 Proficient)", path: "certificados/EF SET Certificate.pdf", category: "english" },
     { title: "Web Designer - Certificación de Carrera", path: "certificados/WebDesigner.pdf", category: "design" },
+    { title: "Programación Web Full Stack - Certificación de Carrera", path: "certificados/Programacion-web-Full-Stack.pdf", category: "frontend" },
     { title: "JavaScript Algorithms and Data Structures (freeCodeCamp)", path: "certificados/certificate-JavaScript-Algorithms-and-Data-Structures.pdf", category: "javascript" },
     { title: "HTML5 Game Development (Udacity)", path: "certificados/certificate-udacity-html5-game-development.pdf", category: "javascript" },
     { title: "Modelo de negocio para productos y servicios creativos", path: "certificados/certificate-Modelo-de-negocio-para-productos-y-servicios-creativos.pdf", category: "other" },
@@ -164,7 +179,34 @@ const DATA = {
     { title: "Curso de Startups e Ideas de Negocio", path: "certificados/diploma-startups-ideas.pdf", category: "other" },
     { title: "Curso de Tailwind CSS", path: "certificados/diploma-tailwind-css-2020.pdf", category: "frontend" },
     { title: "Curso de TypeScript", path: "certificados/diploma-typescript.pdf", category: "javascript" },
-    { title: "Curso de Videojuegos Multijugador", path: "certificados/diploma-videojuegos-multijugador.pdf", category: "javascript" }
+    { title: "Curso de Videojuegos Multijugador", path: "certificados/diploma-videojuegos-multijugador.pdf", category: "javascript" },
+    { title: "Claude Code: Delega Trabajo a la IA", path: "certificados/pontoni.emanuel@gmail.com - CLAUDE CODE_ DELEGA TRABAJO A LA IA.pdf", category: "ai" },
+    { title: "Claude Cowork: Potencia tu Negocio con IA", path: "certificados/pontoni.emanuel@gmail.com - CLAUDE COWORK_ POTENCIA TU NEGOCIO CON IA.pdf", category: "ai" },
+    { title: "Curso de IA con Claude", path: "certificados/pontoni.emanuel@gmail.com - IA CON CLAUDE.pdf", category: "ai" },
+    { title: "Curso de IA en Programación", path: "certificados/pontoni.emanuel@gmail.com - IA en programación.pdf", category: "ai" },
+    { title: "Curso de IA en Uso Profesional", path: "certificados/pontoni.emanuel@gmail.com - IA EN USO PROFESIONAL.pdf", category: "ai" },
+    { title: "Curso de IA Generativa", path: "certificados/pontoni.emanuel@gmail.com - IA GENERATIVA.pdf", category: "ai" },
+    { title: "Curso de Introducción a Machine Learning", path: "certificados/pontoni.emanuel@gmail.com - INTRODUCCIÓN A MACHINE LEARNING.pdf", category: "ai" },
+    { title: "FluentIA", path: "certificados/pontoni.emanuel@gmail.com - FluentIA.pdf", category: "ai" },
+    { title: "Curso de Cloud Computing", path: "certificados/pontoni.emanuel@gmail.com - CLOUD COMPUTING.pdf", category: "tools" },
+    { title: "DevOps Engineer", path: "certificados/pontoni.emanuel@gmail.com - DevOps Engineer.pdf", category: "tools" },
+    { title: "Curso de Infraestructura (con AWS)", path: "certificados/pontoni.emanuel@gmail.com - INFRAESTRUCTURA (CON AWS).pdf", category: "tools" },
+    { title: "Curso de Infraestructura Avanzada", path: "certificados/pontoni.emanuel@gmail.com - INFRAESTRUCTURA AVANZADA.pdf", category: "tools" },
+    { title: "Curso de Testing Automatizado", path: "certificados/pontoni.emanuel@gmail.com - TESTING AUTOMATIZADO.pdf", category: "tools" },
+    { title: "Curso de Power BI", path: "certificados/pontoni.emanuel@gmail.com - POWER BI.pdf", category: "tools" },
+    { title: "Data Skills", path: "certificados/pontoni.emanuel@gmail.com - Data Skills.pdf", category: "math" },
+    { title: "Curso de Exploración y Limpieza de Datos", path: "certificados/pontoni.emanuel@gmail.com - EXPLORACIÓN Y LIMPIEZA DE DATOS.pdf", category: "math" },
+    { title: "Curso de Visualización de Datos con Python", path: "certificados/pontoni.emanuel@gmail.com - VISUALIZACIÓN DE DATOS CON PYTHON.pdf", category: "math" },
+    { title: "Curso de Python Desde Cero", path: "certificados/pontoni.emanuel@gmail.com - PYTHON DESDE CERO.pdf", category: "backend" },
+    { title: "Curso de Introducción a Python", path: "certificados/pontoni.emanuel@gmail.com - INTRODUCCIÓN A PYTHON.pdf", category: "backend" },
+    { title: "Curso de Programación en Python", path: "certificados/pontoni.emanuel@gmail.com - PROGRAMACIÓN EN PYTHON.pdf", category: "backend" },
+    { title: "Curso de Introducción al Backend en Java", path: "certificados/pontoni.emanuel@gmail.com - INTRODUCCIÓN AL BACKEND EN JAVA.pdf", category: "backend" },
+    { title: "Curso de Java con Spring Boot", path: "certificados/pontoni.emanuel@gmail.com - JAVA CON SPRING BOOT.pdf", category: "backend" },
+    { title: "Curso de Programación Orientada a Objetos en Java", path: "certificados/pontoni.emanuel@gmail.com - PROGRAMACIÓN ORIENTADA A OBJETOS EN JAVA.pdf", category: "backend" },
+    { title: "Digital Mindset", path: "certificados/pontoni.emanuel@gmail.com - Digital Mindset.pdf", category: "other" },
+    { title: "Curso de Gestión de Productos Digitales", path: "certificados/pontoni.emanuel@gmail.com - GESTIÓN DE PRODUCTOS DIGITALES.pdf", category: "other" },
+    { title: "Curso de Gestión de Proyectos Escalables", path: "certificados/pontoni.emanuel@gmail.com - GESTIÓN DE PROYECTOS ESCALABLES.pdf", category: "other" },
+    { title: "Problem Solving & Project Management", path: "certificados/pontoni.emanuel@gmail.com - PROBLEM SOLVING & PROJECT MANAGEMENT.pdf", category: "logic" }
   ]
 };
 export default DATA;

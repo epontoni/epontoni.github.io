@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTimeline();
   renderProjects('all');
   renderCertificates();
+  updateDynamicDates();
+  formatMarkdownBold();
   initScrollReveal();
   setupEventListeners();
   startAccentRotation();
@@ -433,20 +435,30 @@ function renderTimeline() {
   const expContainer = document.getElementById('experienceTimeline');
   const eduContainer = document.getElementById('educationTimeline');
   
+  const today = new Date();
+  const teachingStartDate = new Date(2015, 10, 1);
+  let teachingYears = today.getFullYear() - teachingStartDate.getFullYear();
+  if (today.getMonth() < 10) teachingYears--;
+
   if (expContainer && DATA.experience) {
-    expContainer.innerHTML = DATA.experience.map(item => `
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content card-glass">
-          <div class="timeline-header">
-            <span class="timeline-period">${item.period}</span>
-            <h3 class="timeline-role">${item.role}</h3>
-            <h4 class="timeline-company">${item.company}</h4>
+    expContainer.innerHTML = DATA.experience.map(item => {
+      const displayPeriod = item.period.includes('Noviembre 2015')
+        ? `Noviembre 2015 – Presente (~${teachingYears} años)`
+        : item.period;
+      return `
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content card-glass">
+            <div class="timeline-header">
+              <span class="timeline-period">${displayPeriod}</span>
+              <h3 class="timeline-role">${item.role}</h3>
+              <h4 class="timeline-company">${item.company}</h4>
+            </div>
+            <p class="timeline-desc">${item.description}</p>
           </div>
-          <p class="timeline-desc">${item.description}</p>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
   
   if (eduContainer && DATA.education) {
@@ -586,6 +598,7 @@ function getFriendlyCertCategoryName(cat) {
     javascript: 'JS & TS',
     backend: 'Backend',
     frontend: 'Frontend',
+    ai: 'Inteligencia Artificial',
     design: 'Diseño',
     math: 'Matemática',
     logic: 'Lógica',
@@ -594,6 +607,49 @@ function getFriendlyCertCategoryName(cat) {
     other: 'General'
   };
   return mappings[cat] || cat;
+}
+
+/* ==========================================================================
+   DYNAMIC AGE & MARKDOWN BOLD FORMATTER
+   ========================================================================== */
+function updateDynamicDates() {
+  const today = new Date();
+
+  // 1. Edad: Fecha de nacimiento 09 de agosto de 1992
+  const birthDate = new Date(1992, 7, 9); // Agosto es mes 7 (0-indexado)
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const birthMonthDiff = today.getMonth() - birthDate.getMonth();
+  if (birthMonthDiff < 0 || (birthMonthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  const ageSpan = document.getElementById('userAge');
+  if (ageSpan) {
+    ageSpan.textContent = age;
+  }
+
+  // 2. Experiencia docente: contando desde noviembre de 2015
+  const teachingStartDate = new Date(2015, 10, 1); // Noviembre es mes 10 (0-indexado)
+  let teachingYears = today.getFullYear() - teachingStartDate.getFullYear();
+  const teachingMonthDiff = today.getMonth() - teachingStartDate.getMonth();
+  if (teachingMonthDiff < 0 || (teachingMonthDiff === 0 && today.getDate() < teachingStartDate.getDate())) {
+    teachingYears--;
+  }
+  const teachingExpSpan = document.getElementById('teachingExpYears');
+  if (teachingExpSpan) {
+    teachingExpSpan.textContent = teachingYears;
+  }
+}
+
+// Alias for backwards compatibility
+const updateDynamicAge = updateDynamicDates;
+
+function formatMarkdownBold() {
+  const elements = document.querySelectorAll('.about-p, .timeline-desc, .project-description, .hero-bio, .section-subtitle');
+  elements.forEach(el => {
+    if (el.innerHTML.includes('**')) {
+      el.innerHTML = el.innerHTML.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+  });
 }
 
 /* ==========================================================================
