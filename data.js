@@ -190,6 +190,8 @@ const DATA = {
     { title: "FluentIA", path: "certificados/pontoni.emanuel@gmail.com - FluentIA.pdf", category: "ai" },
     { title: "Curso de Cloud Computing", path: "certificados/pontoni.emanuel@gmail.com - CLOUD COMPUTING.pdf", category: "tools" },
     { title: "DevOps Engineer", path: "certificados/pontoni.emanuel@gmail.com - DevOps Engineer.pdf", category: "tools" },
+    { title: "Front End Specialist", path: "certificados/pontoni.emanuel@gmail.com - Front End Specialist.pdf", category: "frontend" },
+    { title: "Professional Developer", path: "certificados/pontoni.emanuel@gmail.com - Professional Developer.pdf", category: "frontend" },
     { title: "Curso de Infraestructura (con AWS)", path: "certificados/pontoni.emanuel@gmail.com - INFRAESTRUCTURA (CON AWS).pdf", category: "tools" },
     { title: "Curso de Infraestructura Avanzada", path: "certificados/pontoni.emanuel@gmail.com - INFRAESTRUCTURA AVANZADA.pdf", category: "tools" },
     { title: "Curso de Testing Automatizado", path: "certificados/pontoni.emanuel@gmail.com - TESTING AUTOMATIZADO.pdf", category: "tools" },
