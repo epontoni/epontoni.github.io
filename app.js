@@ -489,7 +489,7 @@ function renderProjects(filter = 'all') {
   
   const filtered = filter === 'all' 
     ? DATA.projects 
-    : DATA.projects.filter(p => p.category === filter);
+    : DATA.projects.filter(p => Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter);
     
   filtered.forEach(p => {
     const card = document.createElement('div');
@@ -497,9 +497,18 @@ function renderProjects(filter = 'all') {
     
     const techTags = p.tech.map(t => `<span class="project-tech-tag">${t}</span>`).join('');
     
+    let categoryBadge = 'Desarrollo Web';
+    if (Array.isArray(p.category)) {
+      categoryBadge = p.category.includes('web') && p.category.includes('edu')
+        ? 'Web & Matemática'
+        : (p.category.includes('web') ? 'Desarrollo Web' : 'Matemática & Educación');
+    } else if (p.category === 'edu') {
+      categoryBadge = 'Matemática & Educación';
+    }
+
     card.innerHTML = `
       <div class="project-card-header">
-        <span class="project-category-badge">${p.category === 'web' ? 'Desarrollo Web' : 'Matemática & Educación'}</span>
+        <span class="project-category-badge">${categoryBadge}</span>
         <h3 class="project-title">${p.title}</h3>
       </div>
       <p class="project-description">${p.description}</p>

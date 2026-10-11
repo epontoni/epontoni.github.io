@@ -46,6 +46,13 @@ const DATA = {
   ],
   projects: [
     {
+      title: "MentalMath",
+      description: "Gimnasio colaborativo de cálculo mental en tiempo real y código abierto. Salas multijugador proyectables en el aula vía código PIN, práctica individual, academia de atajos numéricos y podio interactivo.",
+      tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Socket.io", "Framer Motion"],
+      demo: "https://mentalmath-59dd.onrender.com/",
+      category: ["web", "edu"]
+    },
+    {
       title: "Plataforma de Aprendizaje",
       description: "Plataforma de e-learning que permite a docentes publicar cursos de manera organizada y a estudiantes acceder a material didáctico.",
       tech: ["Next.js", "Tailwind CSS", "MDX", "TypeScript"],
